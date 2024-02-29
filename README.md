@@ -1,6 +1,5 @@
 # monitoring setup for kubenetes
 
-          helm upgrade --install websitesecret ./helm-charts/websitesecret
 
           helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
