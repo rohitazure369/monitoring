@@ -12,10 +12,10 @@
 
 # install prometheus    
 
-          helm upgrade -install prometheus prometheus-community/prometheus --namespace monitoring
+          helm upgrade -install prometheus prometheus-community/prometheus --namespace monitoring --create-namespace
 
 # install grafana
-          helm upgrade -install grafana grafana/grafana --namespace monitoring
+          helm upgrade -install grafana grafana/grafana --namespace monitoring --create-namespace
 
 # install grafan ingress
           kubectl apply -f vs-grafana.yaml
