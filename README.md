@@ -18,7 +18,7 @@ helm upgrade -install prometheus prometheus-community/prometheus --namespace mon
 helm upgrade -install grafana grafana/grafana --namespace monitoring
 
 # install grafan ingress
-          kubectl apply -f vs-grafana.yaml
+kubectl apply -f vs-grafana.yaml
           
 # get grafana admin password - initial
 kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
