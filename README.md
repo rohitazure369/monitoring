@@ -16,11 +16,18 @@
 # install grafana
           helm upgrade -install grafana grafana/grafana --namespace monitoring --create-namespace
 
+
+# Enable loadbalancer for the grafana service
+          kubectl patch svc grafana -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'
+
 # install grafan ingress
           kubectl apply -f vs-grafana.yaml
-          
 # get grafana admin password - initial
           kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+
+
+****
 
 #
 import 6417 number dashboard for kubenetes cluster details"
